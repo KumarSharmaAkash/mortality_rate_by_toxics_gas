@@ -55,7 +55,7 @@ const MortalityForm: React.FC<MortalityFormProps> = ({ setData }) => {
     } = form;
 
 const calculatedData: DataPoint[] = [];
-for (let i = 1; i <= 1000; i=i+150) {
+for (let i = 1; i <= 1000; i=i+50) {
  const time = i * exposure_time / 10;
     const rate = 2 ** -((LD50_valueofgas * person_mass) / (std_densityofgas * breathing_rate * gasMolarMass * time));
     calculatedData.push({ time, rate });
