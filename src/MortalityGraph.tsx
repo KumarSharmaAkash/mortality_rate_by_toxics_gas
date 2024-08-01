@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactApexChart from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
+import Breadcrumb from './components/Breadcrumbs/Breadcrumb';
 
 interface DataPoint {
   time: number;
@@ -12,6 +13,7 @@ interface MortalityGraphProps {
 }
 
 const MortalityGraph: React.FC<MortalityGraphProps> = ({ data }) => {
+  console.log({data})
   const options: ApexOptions = {
     legend: {
       show: false,
@@ -100,12 +102,13 @@ const MortalityGraph: React.FC<MortalityGraphProps> = ({ data }) => {
       },
       min: 0,
       max: 100,
-      tickAmount: 25, 
+      tickAmount: 25,
+
 
     },
     yaxis: {
       title: {
-        text: 'Population Death',
+        text: 'Mortality Rate',
         style: {
           fontSize: '12px',
         },
@@ -123,6 +126,8 @@ const MortalityGraph: React.FC<MortalityGraphProps> = ({ data }) => {
   ];
 
   return (
+   <>
+    <Breadcrumb pageName="Mortality Rate With Respect To Time" />
     <div className="col-span-12 rounded-sm border border-stroke bg-white px-5 pt-7.5 pb-5 shadow-default dark:border-strokedark dark:bg-boxdark sm:px-7.5 xl:col-span-8">
       <div className="flex flex-wrap items-start justify-between gap-3 sm:flex-nowrap">
         <div className="flex w-full flex-wrap gap-3 sm:gap-5">
@@ -132,7 +137,7 @@ const MortalityGraph: React.FC<MortalityGraphProps> = ({ data }) => {
             </span>
             <div className="w-full">
               <p className="font-semibold text-primary">Mortality Rate</p>
-              <p className="text-sm font-medium">Time Interval vs % of Population Death</p>
+              <p className="text-sm font-medium">Time Interval vs Mortality Rate</p>
             </div>
           </div>
         </div>
@@ -143,7 +148,7 @@ const MortalityGraph: React.FC<MortalityGraphProps> = ({ data }) => {
           <ReactApexChart options={options} series={series} type="area" height={350} />
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 
