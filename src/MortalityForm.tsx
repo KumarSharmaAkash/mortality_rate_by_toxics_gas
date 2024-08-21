@@ -94,6 +94,7 @@ const MortalityForm: React.FC<MortalityFormProps> = ({ setData, setDataConc, set
       breadth,
       radius,
     } = form;
+
     let area: number = 0;
     switch (areaType) {
       case 'square':
@@ -143,11 +144,6 @@ const rateA = 2 ** -((LD50_valueofgas * person_mass) / (calculatedMixtureDensity
 for (let currentArea = area; currentArea <= area * 10; currentArea += area) {
   const rate = rateA/ currentArea;
   calculatedDataArea.push({ area: currentArea, rate });
-const calculatedData: DataPoint[] = [];
-for (let i = 1; i <= 1000; i=i+50) {
- const time = i * exposure_time / 10;
-    const rate = 2 ** -((LD50_valueofgas * person_mass) / (std_densityofgas * breathing_rate * gasMolarMass * time));
-    calculatedData.push({ time, rate });
 }
 
 console.log(calculatedDataArea);
@@ -155,8 +151,6 @@ console.log(calculatedDataArea);
 setDataForArea(calculatedDataArea);
 
   };
-  
-}
 
   return (
     <>
