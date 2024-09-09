@@ -154,7 +154,7 @@ setDataForArea(calculatedDataArea);
 
   return (
     <>
-      <Breadcrumb pageName="Simulation Of Live Monitoring Of Toxic Nature Of Gases With Respect To Effectiveness On Living Beings." />
+      <Breadcrumb pageName="Simulation based prediction of live monitoring of toxic hazards & its impact on living beings" />
       <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
         <div className="border-b border-stroke py-4 px-6.5 dark:border-strokedark">
           <h3 className="font-medium text-black dark:text-white">Mortality Rate Form</h3>
@@ -239,7 +239,7 @@ setDataForArea(calculatedDataArea);
               />
             </div>
             <div className="mb-4.5">
-              <label className="mb-2.5 block text-black dark:text-white">Person Mass (kg):</label>
+              <label className="mb-2.5 block text-black dark:text-white"> Average Person Mass (kg):</label>
               <input
                 type="number"
                 name="person_mass"

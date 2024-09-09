@@ -14,7 +14,7 @@ interface GraphProps {
 const MortalityGraphChart: React.FC<GraphProps> = ({ dataConc }) => {
 
   const formatXAxis = (tickItem: number) => {
-    return tickItem.toFixed(2);
+    return tickItem.toFixed(1);
   };
 
   return (
@@ -28,11 +28,11 @@ const MortalityGraphChart: React.FC<GraphProps> = ({ dataConc }) => {
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
             dataKey="conc"
-            label={{ value: `Concentration`, position: 'insideBottomRight', offset: -5 }}
+            label={{ value: `Concentration Of Toxic Gases`, position: 'insideBottomRight', offset: -5 }}
             tickFormatter={formatXAxis} // Apply the formatting function here
           />
           <YAxis
-            label={{angle: -90, position: 'insideLeft', offset: -5 }}
+            label={{angle: -90, position: 'insideLeft', offset: -15, value: `Mortality Rate` }}
           />
           <Tooltip />
           <Legend />

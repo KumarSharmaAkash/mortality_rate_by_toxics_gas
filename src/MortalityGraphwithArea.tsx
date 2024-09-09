@@ -18,26 +18,28 @@ const MortalityGraphwithArea: React.FC<GraphProps> = ({ DataForArea, areaType })
     circle: '#82ca9d',
     triangle: '#ff6347',
   };
-
   const getColorForAreaType = (type: string): string => {
     return areaTypeColorMap[type] || '#82ca9d'; 
   };
 
+  const formatXAxisTick = (value: number) => value.toFixed(2);
+
   return (
     <>
-      <Breadcrumb pageName="Mortality Rate With Respect To  Area" />
+      <Breadcrumb pageName="Mortality Rate With Respect To Area" />
       <ResponsiveContainer width="100%" height={450}>
         <LineChart
           data={DataForArea}
-          margin={{ top: 20, right: 20, bottom: 20, left: 20 }}
+          margin={{ top: 20, right: 20, bottom: 20, left: 40 }}
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
             dataKey="area"
-            label={{ value: `Unit of Area (${areaType})`, position: 'insideBottomRight', offset: -10 }}
+            label={{ value: `Area (meters squared)`, position: 'insideBottomRight', offset: -10 }}
+            tickFormatter={formatXAxisTick}
           />
           <YAxis
-            label={{angle: -90, position: 'insideLeft', offset: -5 }}
+            label={{ value: 'Mortality Rate', angle: -90, position: 'insideLeft', offset: -30 }}
           />
           <Tooltip />
           <Legend />
