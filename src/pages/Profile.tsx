@@ -32,6 +32,8 @@ const Profile = () => {
             <div className="mx-auto max-w-180">
               <h4 className="font-semibold text-black dark:text-white">
               Website formation to predict the mortality rate against toxic chemicals including CBRN chemicals.
+
+            
               </h4>
               <p className="mt-4.5">
               The development of this React.js-based website for calculating mortality rates due to toxic gas inhalation represents a significant step forward in addressing public health and safety concerns. By leveraging modern web technologies, we can enhance our understanding and response to the dangers posed by toxic gases.
