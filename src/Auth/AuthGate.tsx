@@ -6,7 +6,7 @@ interface AuthGateProps {
   onSuccess: () => void;
 }
 
-const SECRET_CODE = 'admin';
+const SECRET_CODE = 'cbrn@inmas';
 
 const AuthGate: React.FC<AuthGateProps> = ({ onSuccess }) => {
   const [code, setCode] = useState<string>('');
