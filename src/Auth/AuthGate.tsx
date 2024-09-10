@@ -1,6 +1,7 @@
-import React, { useState, FormEvent } from 'react';
+import React, { useState, useEffect, FormEvent } from 'react';
 import './AuthGate.css';
 import logo from '../images/user/user-06.png';
+
 interface AuthGateProps {
   onSuccess: () => void;
 }
@@ -11,9 +12,17 @@ const AuthGate: React.FC<AuthGateProps> = ({ onSuccess }) => {
   const [code, setCode] = useState<string>('');
   const [error, setError] = useState<string>('');
 
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem('isLoggedIn');
+    if (isLoggedIn === 'true') {
+      onSuccess(); // Automatically log the user in if already authenticated
+    }
+  }, [onSuccess]);
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (code === SECRET_CODE) {
+      localStorage.setItem('isLoggedIn', 'true'); // Store login status
       onSuccess();
     } else {
       setError('Incorrect code. Please try again.');
