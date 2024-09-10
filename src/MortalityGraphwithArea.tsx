@@ -35,11 +35,12 @@ const MortalityGraphwithArea: React.FC<GraphProps> = ({ DataForArea, areaType })
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis
             dataKey="area"
-            label={{ value: `Area (meters squared)`, position: 'insideBottomRight', offset: -10 }}
+            label={{ value: `Area (meters square)`, position: 'insideBottomRight', offset: -20 }}
             tickFormatter={formatXAxisTick}
           />
           <YAxis
-            label={{ value: 'Mortality Rate', angle: -90, position: 'insideLeft', offset: -30 }}
+        
+            label={{ value: 'Mortality Rate/Area', angle: -90, position: 'insideLeft', offset: -20 }}
           />
           <Tooltip />
           <Legend />
