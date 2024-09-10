@@ -21,7 +21,7 @@ const GoogleMapComponent: React.FC<GoogleMapComponentProps> = ({ longitude, alti
   return (
     <LoadScript googleMapsApiKey="AIzaSyDi3HMfPKhlIcJ4S_F4d1BVg-maGBQBpGM">
       <GoogleMap
-        mapContainerStyle={{ height: "600px", width: "1130px" }}
+        mapContainerStyle={{ height: "600px", width: "1230px" }}
         center={center}
         zoom={12}
       >
